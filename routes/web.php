@@ -13,6 +13,30 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', [App\Http\Controllers\PrincipalController::class, 'index'])->name('site.index');
+
+Route::get('/sobre-nos', [App\Http\Controllers\SobreNosController::class, 'index'])->name('site.sobre-nos');
+
+Route::get('/contato', [App\Http\Controllers\ContatoController::class, 'index'])->name('site.contato');
+
+Route::get('/login', function(){return 'Login';});
+
+Route::prefix('/app')->group(function(){
+    Route::get('/clientes', function(){ return 'clientes';})->name('app.clientes');
+    Route::get('/fornecedores', function(){ return 'fornecedores'; })->name('app.fornecedores');
+    Route::get('/produtos', function(){return 'produtos';})->name('app.produtos');
 });
+
+
+
+
+
+/*
+ *verbos http
+ get
+ post
+ put
+ patch
+ delete
+ options
+ */
