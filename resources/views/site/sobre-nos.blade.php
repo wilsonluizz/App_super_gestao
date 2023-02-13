@@ -1,25 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+@extends('site.layouts.basico')
 
-    <h1>Sobre Nós</h1>
+@section('titulo', 'Sobre-Nós')
 
-    <ul>
-        <li>
-            <a href="{{route('site.index')}}">Início</a>
-        </li>
-        <li>
-            <a href="{{route('site.sobre-nos')}}">Sobre nós</a>
-        </li>
-        <li>
-            <a href="{{route('site.contato')}}">Contato</a>
-        </li>
-    </ul>
-</body>
-</html>
+@section('conteudo')
+
+    <div class="conteudo-pagina">
+        <div class="titulo-pagina">
+            <h1>Olá, eu sou o Super Gestão</h1>
+        </div>
+
+        <div class="informacao-pagina">
+            <p>O Super Gestão é o sistema online de controle administrativo que pode transformar e potencializar os negócios
+                da sua empresa.</p>
+            <p>Desenvolvido com a mais alta tecnologia para você cuidar do que é mais importante, seus negócios!</p>
+        </div>
+    </div>
+
+    <div class="rodape">
+        <div class="redes-sociais">
+            <h2>Redes sociais</h2>
+            <img src="{{ asset('img/facebook.png') }}">
+            <img src="{{ asset('img/linkedin.png') }}">
+            <img src="{{ asset('img/youtube.png') }}">
+        </div>
+        <div class="area-contato">
+            <h2>Contato</h2>
+            <span>(11) 3333-4444</span>
+            <br>
+            <span>supergestao@dominio.com.br</span>
+        </div>
+        <div class="localizacao">
+            <h2>Localização</h2>
+            <img src="{{ asset('img/mapa.png') }}">
+        </div>
+    </div>
+@endsection

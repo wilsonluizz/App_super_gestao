@@ -1,26 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+@extends('site.layouts.basico')
 
-    <h1>Contato</h1>
+@section('titulo', 'Contato')
 
-    <ul>
-        <li>
-            <a href="{{route('site.index')}}">Início</a>
-        </li>
-        <li>
-            <a href="{{route('site.sobre-nos')}}">Sobre nós</a>
-        </li>
-        <li>
-            <a href="{{route('site.contato')}}">Contato</a>
-        </li>
-    </ul>
+@section('conteudo')
 
-</body>
-</html>
+    <div class="conteudo-pagina">
+        <div class="titulo-pagina">
+            <h1>Entre em contato conosco</h1>
+        </div>
+
+        <div class="informacao-pagina">
+            <div class="contato-principal">
+                @component('site.layouts.components.form_contato', ['classe' => 'borda-preta'])
+                    <p>
+                        A nossa euipe analisará a sua mensagem e retornará o mais breve possíevel
+                    </p>
+                    <p>
+                        Nosso tempo médio de resposta é de 48 horas.
+                    </p>
+                    
+                @endcomponent
+            </div>
+        </div>
+    </div>
+
+    <div class="rodape">
+        <div class="redes-sociais">
+            <h2>Redes sociais</h2>
+            <img src="{{ asset('img/facebook.png') }}">
+            <img src="{{ asset('img/linkedin.png') }}">
+            <img src="{{ asset('img/youtube.png') }}">
+        </div>
+        <div class="area-contato">
+            <h2>Contato</h2>
+            <span>(11) 3333-4444</span>
+            <br>
+            <span>supergestao@dominio.com.br</span>
+        </div>
+        <div class="localizacao">
+            <h2>Localização</h2>
+            <img src="{{ asset('img/mapa.png') }}">
+        </div>
+    </div>
+@endsection
